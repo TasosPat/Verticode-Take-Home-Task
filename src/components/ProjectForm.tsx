@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Project } from "../models/Project";
+import SubmitButton from "./SubmitButton";
+
 interface ProjectFormProps {
     onSubmit: (projectData: Project) => void;
   }
@@ -74,12 +76,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ onSubmit }) => {
           <option value="Completed">Completed</option>
         </select>
       </label>
-      <button
-      type="submit"
-      className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded"
-      >
-    Submit
-    </button>
+      <SubmitButton label="Submit" />
       </div>
       </div>
     </form>
