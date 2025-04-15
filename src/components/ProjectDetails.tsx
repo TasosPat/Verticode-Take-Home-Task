@@ -3,9 +3,10 @@ import { Project } from "../models/Project";
 import SubmitButton from "./SubmitButton";
 interface ProjectDetailsProps {
     project: Project;
+    onBackToForm: () => void;
   }
 
-const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
+const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, onBackToForm }) => {
   const [status, setStatus] = useState(project.status || "In Progress")
   const toggleStatus = () => {
     setStatus((prev) => (prev === "In Progress" ? "Completed" : "In Progress"));
@@ -19,12 +20,19 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
           <p><span className="font-semibold">Description: </span>{project.description}</p>
           <p><span className="font-semibold">Start Date: </span>{project.startDate}</p>
           <p><span className="font-semibold">Status: </span>{status}</p>
-         <SubmitButton 
-         label={status === "In Progress" ? "Mark as Completed" : "Mark as In Progress"}
-         type="button"
-         onClick={toggleStatus}
-         />
         </div>
+        <div className="flex gap-4 mt-6">
+  <SubmitButton
+    label={status === "In Progress" ? "Mark as Completed" : "Mark as In Progress"}
+    type="button"
+    onClick={toggleStatus}
+  />
+  <SubmitButton
+    label="New Project"
+    type="button"
+    onClick={onBackToForm}
+  />
+</div>
         </div>
       );
 }

@@ -17,7 +17,10 @@ const App: React.FC = () => {
     {!project ? (
       <ProjectForm onSubmit={handleSubmit} />
     ) : (
-      <ProjectDetails project={project} />
+      <ProjectDetails
+        project={project}
+        onBackToForm={() => setProject(null)}
+      />
     )}
     </div>
     </main>

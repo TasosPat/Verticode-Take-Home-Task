@@ -26,7 +26,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ onSubmit }) => {
         <h2 className="text-2xl font-bold text-center text-green-700">Create a Project</h2> 
         <div className="flex flex-col">
       <label htmlFor="name" className="text-gray-700 mb-1">
-        Project Name:
+        Project Name: 
         <input
         id="name"
           type="text"
@@ -40,7 +40,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ onSubmit }) => {
 
       <div className="flex flex-col">
       <label htmlFor="description" className="text-gray-700 mb-1">
-        Description:
+        Description: 
         <input
           type="text"
           value={description}
@@ -53,7 +53,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ onSubmit }) => {
 
       <div className="flex flex-col">
       <label htmlFor="start-date" className="text-gray-700 mb-1">
-        Start Date:
+        Start Date: 
         <input
           type="date"
           value={startDate}
@@ -66,7 +66,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ onSubmit }) => {
 
       <div className="flex flex-col">
       <label htmlFor="status" className="text-gray-700 mb-1">
-        Status:
+        Status: 
         <select
         value={status}
         onChange={(e) => setStatus(e.target.value as 'In Progress' | 'Completed')}
